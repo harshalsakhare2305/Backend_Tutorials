@@ -11,3 +11,19 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model IdempotencyKey{
+  id Int @id @default(autoincrement())
+  key String @unique
+  requestHash String
+  status String
+  response Json?
+  razorpayOrderId String?
+  createdAt DateTime @default(now())
+}
+
+enum Status{
+  PROCESSING
+  SUCCESS
+  FAILED
+}
