@@ -1,0 +1,6 @@
+export const config ={
+    READ_STRATEGY:"CACHE_ASIDE",
+    WRITE_STATEGY:"WRITE_THROUGH",
+    INVALIDATION:"TTL",
+    TTL:10
+}
